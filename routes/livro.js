@@ -6,17 +6,13 @@ const router = Router();
 
 router.get("/", Livros.getLivros);
 
-router.post("/", (req, res) => {
-  res.send("Você fez uma requisição do tipo POST");
-});
+router.get("/:id", Livros.getLivrosPorId);
 
-router.patch("/", (req, res) => {
-  res.send("Você fez uma requisição do tipo PATCH");
-});
+router.post("/", Livros.postLivro);
 
-router.delete("/", (req, res) => {
-  res.send("Você fez uma requisição do tipo DELETE");
-});
+router.patch("/:id", Livros.patchLivro);
+
+router.delete("/:id", Livros.deleteLivro);
 
 
 module.exports = router;
