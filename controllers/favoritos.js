@@ -13,7 +13,7 @@ class Favoritos {
 
   static postFavorito(req, res) {
     try {
-      const id = req.params.id;
+      const { id } = req.params;
       FavoritosService.insereFavorito(id);
       res.status(201);
       res.send("Livro inserido com sucesso");
